@@ -6,10 +6,10 @@ import numpy as np
 
 def  plotting_demo():
     
-    uploaded_file = st.file_uploader("Choose a file")
+    #uploaded_file = st.file_uploader("Choose a file")
 
-    money=pd.read_csv(uploaded_file)
-   # money = pd.read_csv("money_data7.csv")
+   #money=pd.read_csv(uploaded_file)
+    money = pd.read_csv("money_data7.csv")
 
     option = st.selectbox(
         'How would you like to choice year ?',
@@ -24,13 +24,13 @@ def  plotting_demo():
     fig, ax = plt.subplots(2,2, figsize=(12,8))
 
     plt.subplot(221)
-    plt.plot(  list( money['A_MONTH'] ), list( money['A_RATE'] ), color='red' , marker='o'     ) 
+    plt.plot(  list( money['A_MONTH'] ), list( money['A_RATE'] ), color='purple' , marker='o'     ) 
     plt.xticks(tuple(money['A_MONTH']) )
     plt.title('America rate')
 
 
     plt.subplot(222)
-    plt.plot(  list( money['A_MONTH'] ), list( money['K_RATE'] ), color='blue' , marker='o'     ) 
+    plt.plot(  list( money['A_MONTH'] ), list( money['K_RATE'] ), color='pink' , marker='o'     ) 
     plt.xticks(tuple(money['A_MONTH']) )
     plt.title('Korea rate')
 
@@ -94,15 +94,13 @@ def bar_chart():
 with st.form(key ='Form1'):
     with st.sidebar:
         
-        select_language = st.sidebar.radio('What do you want ?', ('line', 'bar', 'pie'))
+        select_language = st.sidebar.radio('데이터 분석 결과', ('금리 & 집값', 'KBO 야구 순위 & 승률', '다른 데이터 분석'))
         
         
-if select_language =='line':           
-    try:
-          plotting_demo()  
-    except:      
-          pass
+if select_language =='금리 & 집값':  
+    plotting_demo()
+  
 
         
-elif select_language =='bar':
+elif select_language =='KBO 야구 순위 & 승률':
     bar_chart()
