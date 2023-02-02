@@ -122,7 +122,6 @@ if select_language =='금리 & 집값':
 
         
 elif select_language =='KBO 야구 순위 & 승률':
-    bar_chart()
  tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])
 
  with tab1:
