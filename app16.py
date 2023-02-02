@@ -123,15 +123,13 @@ if select_language =='금리 & 집값':
         
 elif select_language =='KBO 야구 순위 & 승률':
     bar_chart()
+ tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])
 
-if select_language =='KBO 야구 순위 & 승률':  
-tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])
-
-with tab1:
+ with tab1:
     tab1.subheader("차트로 보기")
     plotting_demo()
 
-with tab2:
+ with tab2:
     tab2.subheader("데이터로 보기")
     st.dataframe(bb)
   
