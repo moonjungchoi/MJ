@@ -82,6 +82,11 @@ def bar_chart():
     x = df7.팀
     y = df7.승률
     
+    global  bb
+   
+    bb = baseball
+
+    
     fig, ax = plt.subplots(figsize=(12,8))
 
     colors = ['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7' ,'C8', 'C9', 'C10' ]
@@ -118,3 +123,15 @@ if select_language =='금리 & 집값':
         
 elif select_language =='KBO 야구 순위 & 승률':
     bar_chart()
+
+if select_language =='KBO 야구 순위 & 승률':  
+tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])
+
+with tab1:
+    tab1.subheader("차트로 보기")
+    plotting_demo()
+
+with tab2:
+    tab2.subheader("데이터로 보기")
+    st.dataframe(bb)
+  
