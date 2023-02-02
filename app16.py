@@ -126,7 +126,7 @@ elif select_language =='KBO 야구 순위 & 승률':
 
  with tab1:
     tab1.subheader("차트로 보기")
-    plotting_demo()
+    bar_chart()
 
  with tab2:
     tab2.subheader("데이터로 보기")
